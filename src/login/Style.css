@@ -1,7 +1,7 @@
 body
 {
-	background-color: white;
-	color:#555;
+	background-color: gray;
+	color:black;
 	font-family: "Time New Roman", Times, serif;
 	font-size:24px;
 	line-height:1.6em;
@@ -22,8 +22,21 @@ img
 }
  .header
 {
-	padding: 1px;
+	padding: 10px;
 	background: white;
 	color: gray;
 	font-size: 30px;
+}
+
+.footer
+{
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	padding: 10px;
+	background: black;
+	color: white;
+	font-size: 30px;
+	
+	
 }

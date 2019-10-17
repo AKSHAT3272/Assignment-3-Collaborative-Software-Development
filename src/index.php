@@ -14,6 +14,7 @@ include ('session.php');
 
 
 </head>
-
+<body>
+<h1> Welcome! <?php echo $user_check; ?> </h1>
 </body>
 </html>

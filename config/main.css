@@ -1,0 +1,29 @@
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+
+.footer-main{
+    background-color: #4f2b1d;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* height by margin bottom of body*/
+    height: 60px;
+}
+
+.navbar-center{
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    text-align: center;
+}

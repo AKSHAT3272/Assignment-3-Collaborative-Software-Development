@@ -27,3 +27,12 @@ body {
     transform: translatex(-50%);
     text-align: center;
 }
+.box {
+   border:#666666 solid 1px;
+}
+
+input[type="submit"] {
+  background: #FFB500;
+  border: none;
+  color: white;
+}

@@ -25,24 +25,27 @@ $_SESSION['login'] = true;
 <html>
 	<head>
 	<title> Login Screen</title>
-    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+        <link rel="stylesheet" href="../config/main.css">
 	</head>
 
 
 	<body>
-		<div class = "header">
-		<h1><image src = "assets/logo.png">Name<h1>
-		</div
-				<div class = "container">
+		<header>
+		<h1><image src = "assets/logo.png">RankerHack<h1> </header>
+			<h2 align=center>Log In to RankerHack </h2>
+		</div class = "container">
 				<form action= "" method = "post" align = "center">
-          <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
-          <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
-          <input type = "submit" value = " Submit "/><br />
+          <label>UserName  </label><input type = "text" name = "username" class = "box"/><br /><br />
+          <label>Password  </label><input type = "password" name = "password" class = "box" /><br/><br />
+          <input type = "submit" value = " Log In "/><br />
         </form>
 			</div>
 
 	</body>
-	 <div class = "footer">
-	<p>test<br></p>
-	</div>
+	<footer class="page-footer font-small footer-main">
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3"> © 2019 Copyright:
+					Adelphi University
+			</div>
+	</footer>
  </html>

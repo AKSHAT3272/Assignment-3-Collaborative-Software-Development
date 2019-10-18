@@ -22,12 +22,24 @@ include ('session.php');
         <div class="main-menu">
             <div class = "menu-header">
                 <!-- Header ICON? BIg letter here(first letter of username)-->
+		<h1>Welcome <?php echo $user_check;?></h1>
             </div>
             
             <!-- Navbar - later should dynamically load options, but for now are hard coded-->
             <nav class="navbar navbar-expand">
                 <ul class="navbar-nav navbar-center">
-                    <li class="nav-item">Log Off</li>
+		    <?php
+			if($roles_values['isparticipant'] != 0){
+				echo '<li class="nav-item right-side-padding">Participant</li>';
+			} 
+			if($roles_values['isorganizer'] != 0){
+                                echo '<li class="nav-item right-side-padding">Organizer</li>';
+                        }
+			if($roles_values['isadmin'] != 0){
+                                echo '<li class="nav-item right-side-padding">Administrator</li>';
+                        }
+		     ?>
+                    <li class="nav-item right-side-padding">Log Off</li>
                 </ul>
             </nav>
         </div>

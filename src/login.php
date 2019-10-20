@@ -25,18 +25,30 @@ $_SESSION['login'] = true;
 <html>
 	<head>
 	<title> Login Screen</title>
-        <link rel="stylesheet" href="../config/main.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- link rel="stylesheet" href="stylesheets/main.css" -->
+	<link rel="stylesheet" href="../config/main.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</head>
 
 
 	<body>
+		<div class="main-menu">
+					<div class = "menu-header">
 		<header>
 		<h1><image src = "assets/logo.png">RankerHack<h1> </header>
+		</div>
 			<h2 align=center>Log In to RankerHack </h2>
 		</div class = "container">
 				<form action= "" method = "post" align = "center">
-          <label>UserName  </label><input type = "text" name = "username" class = "box"/><br /><br />
-          <label>Password  </label><input type = "password" name = "password" class = "box" /><br/><br />
+          <label>UserName  &nbsp;</label><input type = "text" name = "username" class = "box"/><br /><br />
+          <label>Password  &nbsp;</label><input type = "password" name = "password" class = "box" /><br/><br />
           <input type = "submit" value = " Log In "/><br />
         </form>
 			</div>
@@ -44,7 +56,7 @@ $_SESSION['login'] = true;
 	</body>
 	<footer class="page-footer font-small footer-main">
 			<!-- Copyright -->
-			<div class="footer-copyright text-center py-3"> © 2019 Copyright:
+			<div class="footer-copyright text-center py-3">© 2019 Copyright:
 					Adelphi University
 			</div>
 	</footer>

@@ -10,11 +10,9 @@ include ('session.php');
   <title>This is a test</title>
 
 
-      <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 <body>
 <h1> Welcome! <?php echo $user_check; ?> </h1>
+<p> <?php if(!$roles_sql){echo $roles_query;}else{echo "wow";echo implode(",",$roles_values);} ?></p>
 </body>
 </html>

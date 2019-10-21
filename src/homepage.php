@@ -39,7 +39,7 @@ include ('session.php');
                                 echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding">Log Off</li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
                 </ul>
             </nav>
         </div>

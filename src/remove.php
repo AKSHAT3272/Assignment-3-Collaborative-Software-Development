@@ -11,6 +11,7 @@
 		print_r($_POST);
 		if(isset($_POST['challengeID'])) {
 			$rowID = intval($_POST['challengeID']);
+			$organizer_challenge_remove = mysqli_query($db,"delete from organizerchallenge where challengeID=$rowID LIMIT 1;");
 			$query = "DELETE FROM Challenge WHERE challengeID=$rowID LIMIT 1;";
 			$result= mysqli_query($db,$query);
 				if($result == TRUE)

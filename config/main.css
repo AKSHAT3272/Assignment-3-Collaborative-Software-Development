@@ -68,3 +68,7 @@ input[type="submit"] {
   background: #ff9500;
   padding-top:30px;
 }
+
+.table-left-side-padding{
+  padding-left: 72px;
+}

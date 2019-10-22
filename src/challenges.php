@@ -52,7 +52,6 @@ include ('session.php');
 <h1> Challenges </h1>
 <?php
 $result = mysqli_query($db,"SELECT * FROM Challenge;");
-$arr = mysqli_fetch_assoc($result);
 $arr2 = array(array(1,2,3,4),array(5,6,7,8));
 ?>
     <form action="" method="post">
@@ -65,11 +64,16 @@ $arr2 = array(array(1,2,3,4),array(5,6,7,8));
      </tr>
 
      <?php
-		print_r($arr);
-	for($i = 0; $i < count($arr);$i++)
+		
+	while($row = mysqli_fetch_array($result)) 
 	{
-		$row = $arr[$i];
-
+		echo "<tr>";
+		echo "<td>".$row['challengeID']."</td>";
+		echo "<td>".$row['problem']."</td>";
+		echo "<td>".$row['solution']."</td>";
+		echo '<form action="remove.php" method="post">
+			<td> <input type="hidden" value = "'.$row['challengeID'].'" name="challengeID">';
+		echo ' <input type="submit" value="Delete"> </td> </form>';
 		print_r($row);
 	} 
               /*  while ($row = mysqli_fetch_array($result)) {

@@ -22,7 +22,11 @@ include ('session.php');
         <div class="main-menu">
             <div class = "menu-header">
                 <!-- Header ICON? BIg letter here(first letter of username)-->
-		<h1>Welcome <?php echo $user_check;?></h1>
+		<div class="profile-icon">
+			<?php echo $user_check[0];?>
+		</div>
+		
+		<div class="username"><?php echo $user_check;?></div>
             </div>
             
             <!-- Navbar - later should dynamically load options, but for now are hard coded-->

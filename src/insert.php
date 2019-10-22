@@ -19,7 +19,7 @@
                   if($db->query($sql) == TRUE)
                 {
                         echo "New challenge successfully created";
-                    header('Location: challenge.php');
+                    header('Location: challenges.php');
                 }
                 else
                 {

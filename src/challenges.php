@@ -1,5 +1,5 @@
 <?php
-include ('config.php');
+include ('session.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,7 +42,7 @@ include ('config.php');
                                 echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</a></li>
                 </ul>
             </nav>
         </div>
@@ -64,9 +64,8 @@ $result = mysqli_query($con,"SELECT challengeID,problem FROM Challenge;");
 <div class="container">
   <table id = "myTable">
     <tr>
-      <th>challengeID</th>
-      <th>problem</th>
-      <th>solution</th>
+      <th>ChallengeID &nbsp;</th>
+      <th>Problem &nbsp;</th>
      </tr>
 
      <?php
@@ -74,7 +73,6 @@ $result = mysqli_query($con,"SELECT challengeID,problem FROM Challenge;");
                      echo "<tr>";
                      echo "<td>".$row['challengeID']."</td>";
                      echo "<td>".$row['problem']."</td>";
-                     echo "<td>".$row['solution']."</td>";
 
                      echo "</tr>";
 }
@@ -82,9 +80,13 @@ $result = mysqli_query($con,"SELECT challengeID,problem FROM Challenge;");
    </table>
    </form>
 	</div>
+
+<br>
+<br>
+<br>
 <div>
-  <form action="insertDatabase.php" method="get" id="form" class = "container">
-<h1> Create new challenge </h1>
+  <form action="insert.php" method="get" id="form" class = "container">
+<h2> Create new challenge </h2>
 <input name="challengeID" type="text" placeholder="Challenge ID">
 
 		  <input name="problem" type="text" placeholder="Problem">

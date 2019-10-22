@@ -37,13 +37,13 @@ include ('session.php');
 				echo '<li class="nav-item right-side-padding">Participant</li>';
 			}
 			if($roles_values['isorganizer'] != 0){
-                                echo '<li class="nav-item right-side-padding"><a href="challenge.php">Log Off></a>Organizer</li>';
+                                echo '<li class="nav-item right-side-padding"><a href="challenges.php">Organizer</li>';
                         }
 			if($roles_values['isadmin'] != 0){
                                 echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off></a></li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
                 </ul>
             </nav>
         </div>

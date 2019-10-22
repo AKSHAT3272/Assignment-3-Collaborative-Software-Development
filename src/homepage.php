@@ -20,10 +20,14 @@ include ('session.php');
     <body>
         <!-- Add color to the main menu, change dimensions of it to whatever, etc-->
         <div class="main-menu">
-            <div class = "menu-header">
+            <div class = "menu-header"><center>
                 <!-- Header ICON? BIg letter here(first letter of username)-->
-		<h1>Welcome <?php echo $user_check;?></h1>
-            </div>
+		<div class="profile-icon">
+			<?php echo $user_check[0];?>
+		</div>
+		
+		<div class="username"><?php echo $user_check;?></div>
+            </div></center>
             
             <!-- Navbar - later should dynamically load options, but for now are hard coded-->
             <nav class="navbar navbar-expand">
@@ -43,6 +47,10 @@ include ('session.php');
                 </ul>
             </nav>
         </div>
+
+	<!--Put main content in pages here-->
+	<div class="main-content">
+	</div>
         
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">

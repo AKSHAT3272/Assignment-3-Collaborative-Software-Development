@@ -79,7 +79,7 @@ include ('session.php');
 				echo ' <input type="submit" value="Delete"> </td> </form>';
 
 		}
-		}
+		
 	?>
 	</tr>
 	</table>

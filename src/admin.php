@@ -40,16 +40,46 @@ include ('session.php');
                                 echo '<li class="nav-item right-side-padding"><a href="challenges.php">Organizer</a></li>';
                         }
 			if($roles_values['isadmin'] != 0){
-                                echo '<li class="nav-item right-side-padding"><a href="admin.php">Administrator</a></li>';
+                                echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off </a></li>
                 </ul>
             </nav>
         </div>
 
 	<!--Put main content in pages here-->
 	<div class="main-content">
+	<h1> Users </h1>
+	<?php
+	$result = mysqli_query($db,"SELECT * FROM User;"); 
+	?>
+	
+	<div class="container">
+	<table id="myarray">
+	<tr>
+	<th> Username &nbsp; </th>
+	<th> Type of user &nbsp; </th>
+	</tr>
+
+	<?php
+		while($row = mysqli_fetch_assoc($result))
+		{	//var_dump($row);
+			echo "<tr>";
+			echo "<td>" .$row['username']."</td>";
+		 	//$isparticipant = $row['isParticipant'];
+
+				echo "<td>"; 
+				if($row['isParticipant'] != 0){ echo '&nbsp; Participant';}
+				if($row['isOrganizer'] != 0) { echo '&nbsp; Organizer';}
+				if($row['isAdmin'] != 0) { echo '&nbsp; Administrator'; }
+			echo "</td>";
+		}
+	?>
+	</tr>
+	</table>
+	
+	 
 	</div>
 
         <!-- Footer - change css when possible-->
@@ -61,3 +91,4 @@ include ('session.php');
         </footer>
     </body>
 </html>
+

@@ -1,3 +1,6 @@
+<?php
+include ('config.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,7 +49,17 @@
 
 	<!--Put main content in pages here-->
 	<div class="main-content">
+<h1> Challenges </h1>
+<?php
+$con=mysqli_connect("localhost","michaelpascale","","michaelpascale");
+// Check connection
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+$result = mysqli_query($con,"SELECT challengeID,problem FROM Challenge;");
 
+?>
     <form action="" method="post">
 <div class="container">
   <table id = "myTable">
@@ -69,7 +82,17 @@
    </table>
    </form>
 	</div>
+<div>
+  <form action="insertDatabase.php" method="get" id="form" class = "container">
+<h1> Create new challenge </h1>
+<input name="challengeID" type="text" placeholder="Challenge ID">
 
+		  <input name="problem" type="text" placeholder="Problem">
+      <input name="solution" type="text" placeholder="Solution">
+      <input id="submit" type="submit" value="SAVE">
+
+</form>
+</div>
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">
             <!-- Copyright -->

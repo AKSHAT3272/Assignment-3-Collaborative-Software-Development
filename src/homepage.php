@@ -25,25 +25,25 @@ include ('session.php');
 		<div class="profile-icon">
 			<?php echo $user_check[0];?>
 		</div>
-		
+
 		<div class="username"><?php echo $user_check;?></div>
             </div></center>
-            
+
             <!-- Navbar - later should dynamically load options, but for now are hard coded-->
             <nav class="navbar navbar-expand">
                 <ul class="navbar-nav navbar-center">
 		    <?php
 			if($roles_values['isparticipant'] != 0){
 				echo '<li class="nav-item right-side-padding">Participant</li>';
-			} 
+			}
 			if($roles_values['isorganizer'] != 0){
-                                echo '<li class="nav-item right-side-padding">Organizer</li>';
+                                echo '<li class="nav-item right-side-padding"><a href="challenge.php">Log Off></a>Organizer</li>';
                         }
 			if($roles_values['isadmin'] != 0){
                                 echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off></a></li>
                 </ul>
             </nav>
         </div>
@@ -51,13 +51,13 @@ include ('session.php');
 	<!--Put main content in pages here-->
 	<div class="main-content">
 	</div>
-        
+
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2019 Copyright:
                 Adelphi University
-            </div>  
+            </div>
         </footer>
     </body>
 </html>

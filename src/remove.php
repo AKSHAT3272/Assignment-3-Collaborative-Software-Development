@@ -13,8 +13,11 @@
 			$rowID = intval($_POST['challengeID']);
 			$query = "DELETE FROM Challenge WHERE challengeID=$rowID LIMIT 1;";
 			$result= mysqli_query($db,$query);
+			$query2 = "Delete from organizerchallenge where challengeid=$rowID LIMIT 1;";
+			$result2 = mysqli_query($db,$query2); 
 			echo "Error: " . $query . "<br>" . $db->error;
 			header('Location: challenges.php');
+			
 	}
 }
 

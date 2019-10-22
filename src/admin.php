@@ -77,6 +77,8 @@ include ('session.php');
 				echo '<form action="remove.php" method="post">
 				<td> <input type="hidden" value = "'.$row['username'].'" name="username">';
 				echo ' <input type="submit" value="Delete"> </td> </form>';
+
+		}
 		}
 	?>
 	</tr>

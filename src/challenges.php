@@ -52,10 +52,9 @@ include ('session.php');
 <h1> Challenges </h1>
 <?php
 $result = mysqli_query($db,"SELECT * FROM Challenge;");
-$arr = mysqli_fetch_assoc($result);
 $arr2 = array(array(1,2,3,4),array(5,6,7,8));
 ?>
-    <form action="" method="post">
+
 <div class="container">
   <table id = "myTable">
     <tr>
@@ -65,12 +64,16 @@ $arr2 = array(array(1,2,3,4),array(5,6,7,8));
      </tr>
 
      <?php
-		print_r($arr);
-	for($i = 0; $i < count($arr);$i++)
+		
+	while($row = mysqli_fetch_array($result)) 
 	{
-		$row = $arr[$i];
-
-		print_r($row);
+		echo "<tr>";
+		echo "<td>".$row['challengeID']."</td>";
+		echo "<td>".$row['problem']."</td>";
+		echo "<td>".$row['solution']."</td>";
+		echo '<form action="remove.php" method="post">
+			<td> <input type="hidden" value = "'.$row['challengeID'].'" name="challengeID">';
+		echo ' <input type="submit" value="Delete"> </td> </form>';
 	} 
               /*  while ($row = mysqli_fetch_array($result)) {
 		    
@@ -85,7 +88,6 @@ $arr2 = array(array(1,2,3,4),array(5,6,7,8));
    ?>
 </tr>
    </table>
-   </form>
 	</div>
 
 <br>
@@ -94,7 +96,7 @@ $arr2 = array(array(1,2,3,4),array(5,6,7,8));
 <div>
   <form action="insert.php" method="get" id="form" class = "container">
 <h2> Create new challenge </h2>
-<input name="challengeID" type="text" placeholder="Challenge ID">
+<!--<input name="challengeID" type="text" placeholder="Challenge ID"> -->
 
 		  <input name="problem" type="text" placeholder="Problem">
       <input name="solution" type="text" placeholder="Solution">

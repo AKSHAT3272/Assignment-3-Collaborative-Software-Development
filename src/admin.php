@@ -40,17 +40,67 @@ include ('session.php');
                                 echo '<li class="nav-item right-side-padding"><a href="challenges.php">Organizer</a></li>';
                         }
 			if($roles_values['isadmin'] != 0){
-                                echo '<li class="nav-item right-side-padding"><a href="admin.php">Administrator</a></li>';
+                                echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off </a></li>
                 </ul>
             </nav>
         </div>
 
 	<!--Put main content in pages here-->
 	<div class="main-content">
+	<h1> Users </h1>
+	<?php
+	$result = mysqli_query($db,"SELECT * FROM User;"); 
+	?>
+	
+	<div class="container">
+	<table id="myarray">
+	<tr>
+	<th> Username &nbsp; </th>
+	<th> Type of user &nbsp; </th>
+	</tr>
+
+	<?php
+		while($row = mysqli_fetch_assoc($result))
+		{	//var_dump($row);
+			echo "<tr>";
+			echo "<td>" .$row['username']."</td>";
+		 	//$isparticipant = $row['isParticipant'];
+
+				echo "<td>"; 
+				if($row['isParticipant'] != 0){ echo '&nbsp; Participant';}
+				if($row['isOrganizer'] != 0) { echo '&nbsp; Organizer';}
+				if($row['isAdmin'] != 0) { echo '&nbsp; Administrator'; }
+				echo "</td>";
+				echo '<form action="remove.php" method="post">
+				<td> <input type="hidden" value = "'.$row['username'].'" name="username">';
+				echo ' <input type="submit" value="Delete"> </td> </form>';
+
+		}
+		
+	?>
+	</tr>
+	</table>
 	</div>
+
+	</div>
+		<form action="insert.php" method="post" id="form" class="container">
+		<h2> Add a User </h2>
+		<input name="username" type="text" placeholder="Username">
+		<input name="password" type="password" placeholder="Password">
+		<div>
+		 <input type='hidden' value='0' name='isparticipant'>
+		<input type="checkbox"  name="isparticipant" value="1">IsParticipant <br>
+		 <input type='hidden' value='0' name='isadmin'>
+		<input type="checkbox"  name="isadmin" value="1">IsAdmin <br>
+		 <input type='hidden' value='0' name='isorganizer'>
+		<input type="checkbox"  name="isorganizer" value="1"> IsOrganizer <br>
+		</div>
+		 <input id="submit" type="submit" value="SAVE">
+		</form>
+		</div>	
 
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">
@@ -61,3 +111,4 @@ include ('session.php');
         </footer>
     </body>
 </html>
+

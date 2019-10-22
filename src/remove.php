@@ -13,12 +13,29 @@
 			$rowID = intval($_POST['challengeID']);
 			$query = "DELETE FROM Challenge WHERE challengeID=$rowID LIMIT 1;";
 			$result= mysqli_query($db,$query);
-			$query2 = "Delete from organizerchallenge where challengeid=$rowID LIMIT 1;";
-			$result2 = mysqli_query($db,$query2); 
-			echo "Error: " . $query . "<br>" . $db->error;
-			header('Location: challenges.php');
-			
-	}
-}
+				if($result == TRUE)
+				{
+				header('Location: challenges.php');
+				}
+				else
+				{
+				echo "Error: " . $query . "<br>" . $db->error;
+				}
+			}
 
+	  	if(isset($_POST['username'])) {
+				
+			$user = $_POST['username'];
+			$delete_q ="DELETE FROM `User` WHERE username='$user' LIMIT 1;";
+			$delete_q .="DELETE FROM `Login` WHERE username='$user' LIMIT 1;";
+			$del_result = $db->multi_query($delete_q);
+				if($del_result == TRUE){
+                        		header('Location: admin.php');
+			
+				}
+				else{
+					echo "Error: " . $delete_q . "<br>" . $db->error;
+				}
+		}	
+	}
 ?>

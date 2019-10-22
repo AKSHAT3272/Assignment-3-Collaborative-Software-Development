@@ -77,15 +77,14 @@ include ('session.php');
 				echo '<form action="remove.php" method="post">
 				<td> <input type="hidden" value = "'.$row['username'].'" name="username">';
 				echo ' <input type="submit" value="Delete"> </td> </form>';
+
 		}
 		}
 	?>
 	</tr>
 	</table>
-	
-	 
 	</div>
-	
+
 	</div>
 		<form action="insert.php" method="post" id="form" class="container">
 		<h2> Add a User </h2>
@@ -102,6 +101,7 @@ include ('session.php');
 		 <input id="submit" type="submit" value="SAVE">
 		</form>
 		</div>	
+
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">
             <!-- Copyright -->

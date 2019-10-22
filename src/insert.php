@@ -17,6 +17,7 @@
                   VALUES ('$problem','$solution');";
                   if($db->query($sql) == TRUE)
                 {
+		//
 		//get the username from session, and get challenge id from what we just added
                 $challenge_id_query = "Select challengeid from challenge where problem = '$problem' and
                                         solution ='$solution'";

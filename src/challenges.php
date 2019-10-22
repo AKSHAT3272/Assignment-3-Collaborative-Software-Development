@@ -1,7 +1,6 @@
 <?php
 include ('session.php');
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,21 +36,72 @@ include ('session.php');
 				echo '<li class="nav-item right-side-padding">Participant</li>';
 			}
 			if($roles_values['isorganizer'] != 0){
-                                echo '<li class="nav-item right-side-padding"><a href="challenges.php">Organizer</li>';
+                                echo '<li class="nav-item right-side-padding">Organizer</li>';
                         }
 			if($roles_values['isadmin'] != 0){
                                 echo '<li class="nav-item right-side-padding">Administrator</li>';
                         }
 		     ?>
-                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</li>
+                    <li class="nav-item right-side-padding"><a href="logout.php">Log Off</a></li>
                 </ul>
             </nav>
         </div>
 
 	<!--Put main content in pages here-->
 	<div class="main-content">
+<h1> Challenges </h1>
+<?php
+$result = mysqli_query($db,"SELECT * FROM Challenge;");
+$arr = mysqli_fetch_assoc($result);
+$arr2 = array(array(1,2,3,4),array(5,6,7,8));
+?>
+    <form action="" method="post">
+<div class="container">
+  <table id = "myTable">
+    <tr>
+      <th>ChallengeID &nbsp;</th>
+      <th>Problem &nbsp;</th>
+      <th>Solution &nbsp; </th>
+     </tr>
+
+     <?php
+		print_r($arr);
+	for($i = 0; $i < count($arr);$i++)
+	{
+		$row = $arr[$i];
+
+		print_r($row);
+	} 
+              /*  while ($row = mysqli_fetch_array($result)) {
+		    
+                     echo "<tr>";
+                     echo "<td>".$row['challengeID']."</td>";
+                     echo "<td>".$row['problem']."</td>";
+		     echo "<td>".$row['solution']."</td>";
+		     echo '<form action="remove.php" method="post">
+				<td> <input type="hidden" value="'.$row['challengeID'].'" name="challengeID">
+				<input type="submit" value="Delete"> </td> </form> '; } */
+
+   ?>
+</tr>
+   </table>
+   </form>
 	</div>
 
+<br>
+<br>
+<br>
+<div>
+  <form action="insert.php" method="get" id="form" class = "container">
+<h2> Create new challenge </h2>
+<input name="challengeID" type="text" placeholder="Challenge ID">
+
+		  <input name="problem" type="text" placeholder="Problem">
+      <input name="solution" type="text" placeholder="Solution">
+      <input id="submit" type="submit" value="SAVE">
+
+</form>
+</div>
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">
             <!-- Copyright -->

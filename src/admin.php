@@ -73,14 +73,32 @@ include ('session.php');
 				if($row['isParticipant'] != 0){ echo '&nbsp; Participant';}
 				if($row['isOrganizer'] != 0) { echo '&nbsp; Organizer';}
 				if($row['isAdmin'] != 0) { echo '&nbsp; Administrator'; }
-			echo "</td>";
+				echo "</td>";
+				echo '<form action="remove.php" method="post">
+				<td> <input type="hidden" value = "'.$row['username'].'" name="username">';
+				echo ' <input type="submit" value="Delete"> </td> </form>';
 		}
 	?>
 	</tr>
 	</table>
-	
-	 
 	</div>
+
+	</div>
+		<form action="insert.php" method="post" id="form" class="container">
+		<h2> Add a User </h2>
+		<input name="username" type="text" placeholder="Username">
+		<input name="password" type="password" placeholder="Password">
+		<div>
+		 <input type='hidden' value='0' name='isparticipant'>
+		<input type="checkbox"  name="isparticipant" value="1">IsParticipant <br>
+		 <input type='hidden' value='0' name='isadmin'>
+		<input type="checkbox"  name="isadmin" value="1">IsAdmin <br>
+		 <input type='hidden' value='0' name='isorganizer'>
+		<input type="checkbox"  name="isorganizer" value="1"> IsOrganizer <br>
+		</div>
+		 <input id="submit" type="submit" value="SAVE">
+		</form>
+		</div>	
 
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">

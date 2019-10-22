@@ -26,6 +26,7 @@ body {
     left: 50%;
     transform: translatex(-50%);
     text-align: center;
+    padding-bottom: 20px;
 }
 .box {
    border:#666666 solid 1px;
@@ -43,4 +44,27 @@ input[type="submit"] {
 }
 .right-side-padding{
   padding-right: 16px;
+}
+
+.profile-icon{
+  width: 150px;
+  height: 150px;
+  background: #ffb908;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;/* same as div heigh*/ 
+  font-size: 100px;
+}
+
+.username{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.main-menu{
+  background: #ff9500;
+  padding-top:30px;
 }

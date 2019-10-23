@@ -110,7 +110,7 @@ include ('session.php');
 			</div>
 				<div class = "col-md-6" align="center">
 					<h1> Active participants and problems</h1>
-					<div class="scrollable">
+					<div  class="scrollable">
 						<?php
 							//get the challenges that match the id of the organizer
 							$challenges_query = "select challengeid from organizerchallenge where username='".$user_check."';";
@@ -124,10 +124,10 @@ include ('session.php');
 								//get the solutions posted by participants
 								$challenge_solutions_query = "select username, attempt from participantchallenge where challengeid=".$row['challengeid'].";";
 								$challenge_solutions_sql = mysqli_query($db, $challenge_solutions_query);
-								echo "<table align='left'> <tr> <th>User Name &nbsp;</th><th>Attempt &nbsp;</th></tr>";
+								echo "<table> <tr> <th>User Name &nbsp;</th><th>Attempt &nbsp;</th></tr>";
 								while($ind_solution = mysqli_fetch_array($challenge_solutions_sql)){
-									echo "<td>".$ind_solution['username']."</td>";
-									echo "<td>".$ind_solution['attempt']."</td>";
+									echo "<tr><td>".$ind_solution['username']."</td>";
+									echo "<td>".$ind_solution['attempt']."</td></tr>";
 								}
 								echo "</table><br>";
 							}

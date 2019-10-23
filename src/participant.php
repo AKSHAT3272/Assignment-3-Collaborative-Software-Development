@@ -1,5 +1,5 @@
 <?php
-include ('session.php');
+include ('solve.php');
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ include ('session.php');
                                 <table>
                                         <tr>
                                                 <th>Organizer &nbsp;</th>
-                                                <th>Problem &nbsp</th>
+                                                <th>Problem &nbsp;</th>
                                         </tr>
                                         <?php
                                                 $result = mysqli_query($db, "select challengeid, problem from challenge;");
@@ -63,13 +63,18 @@ include ('session.php');
                                                         $organizer_result = mysqli_fetch_array($organizer_query);
                                                         echo "<tr><td>".$organizer_result['username']."</td>";
                                                         echo "<td>".$row['problem']."</td>";
-							echo "<td><form action='solve.php' method='POST'><input type='text' placeholder='Solution' 
+							echo "<td><form action='participant.php' method='POST'><input type='text' placeholder='Solution' 
 								name='solution'><input type='submit' value='Submit' name='submit'><input type='hidden'
 								value = '".$row['challengeid']."' name='challengeID'></form></td>";
-                                                }
+							echo "</tr>";
+			                                            
+}
+		
              			?>
                  </table>
         </div>
+		<br><br>
+	<?php echo "<h4>The problem you submitted was $solved </h4>"; ?>
 
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">

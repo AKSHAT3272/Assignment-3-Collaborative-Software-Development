@@ -31,15 +31,16 @@ include ('session.php');
             <!-- Navbar - later should dynamically load options, but for now are hard coded-->
             <nav class="navbar navbar-expand">
                 <ul class="navbar-nav navbar-center">
+		    
 		    <?php
 			if($roles_values['isparticipant'] != 0){
-				echo '<li class="nav-item right-side-padding">Participant</li>';
+				echo '<li class="nav-item right-side-padding"><a href="partipant.php">Participant</a></li>';
 			}
 			if($roles_values['isorganizer'] != 0){
-                                echo '<li class="nav-item right-side-padding">Organizer</li>';
+                                echo '<li class="nav-item right-side-padding"><a href="challenges.php">Organizer</a></li>';
                         }
 			if($roles_values['isadmin'] != 0){
-                                echo '<li class="nav-item right-side-padding">Administrator</li>';
+                                echo '<li class="nav-item right-side-padding"><a href="admin.php">Administrator</a></li>';
                         }
 		     ?>
                     <li class="nav-item right-side-padding"><a href="logout.php">Log Off</a></li>
@@ -123,10 +124,12 @@ include ('session.php');
 								//get the solutions posted by participants
 								$challenge_solutions_query = "select username, attempt from participantchallenge where challengeid=".$row['challengeid'].";";
 								$challenge_solutions_sql = mysqli_query($db, $challenge_solutions_query);
-								echo "<table align='left' class='table-left-side-padding'> <tr> <th>User Name &nbsp;</th><th>Attempt &nbsp;</th></tr>";
+								echo "<table align='left'> <tr> <th>User Name &nbsp;</th><th>Attempt &nbsp;</th></tr>";
 								while($ind_solution = mysqli_fetch_array($challenge_solutions_sql)){
+									echo "<td>".$ind_solution['username']."</td>";
+									echo "<td>".$ind_solution['attempt']."</td>";
 								}
-								echo "</table>";
+								echo "</table><br>";
 							}
 							//get the solutions from the participants that match the id of each challenge
 						?>

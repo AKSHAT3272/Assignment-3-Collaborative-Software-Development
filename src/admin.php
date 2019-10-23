@@ -34,13 +34,13 @@ include ('session.php');
                 <ul class="navbar-nav navbar-center">
 		    <?php
 			if($roles_values['isparticipant'] != 0){
-				echo '<li class="nav-item right-side-padding">Participant</li>';
+				echo '<li class="nav-item right-side-padding"><a href ="participant.php">Participant</a></li>';
 			}
 			if($roles_values['isorganizer'] != 0){
                                 echo '<li class="nav-item right-side-padding"><a href="challenges.php">Organizer</a></li>';
                         }
 			if($roles_values['isadmin'] != 0){
-                                echo '<li class="nav-item right-side-padding">Administrator</li>';
+                                echo '<li class="nav-item right-side-padding"><a href = "admin.php">Administrator</a></li>';
                         }
 		     ?>
                     <li class="nav-item right-side-padding"><a href="logout.php">Log Off </a></li>

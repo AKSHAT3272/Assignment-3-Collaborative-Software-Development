@@ -47,7 +47,7 @@ A organizer can add challenges and look at progress on particular challenges
 A admin can add or remove users and assign roles to users
 ![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Admin.png)
 
-##Participant
+## Participant
 
 A Participant can solve challenges posted by organizers
 ![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Participant.png)

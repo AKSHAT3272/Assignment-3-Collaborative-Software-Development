@@ -50,13 +50,16 @@ include ('session.php');
 
 	<!--Put main content in pages here-->
 	<div class="main-content">
+	<div class="row">
+            	 <div class = "col-md-6" align="center"><br>
+
 	<h1> Users </h1>
 	<?php
 	$result = mysqli_query($db,"SELECT * FROM User;"); 
 	?>
 	
 	<div class="container">
-	<table id="myarray">
+	<table id="myTable">
 	<tr>
 	<th> Username &nbsp; </th>
 	<th> Type of user &nbsp; </th>
@@ -84,23 +87,27 @@ include ('session.php');
 	</tr>
 	</table>
 	</div>
-
 	</div>
+		<div class="col-md-6" align="center">
 		<form action="insert.php" method="post" id="form" class="container">
+		<div align="left"><br>
 		<h2> Add a User </h2>
-		<input name="username" type="text" placeholder="Username">
-		<input name="password" type="password" placeholder="Password">
-		<div>
+		<input  name="username" type="text" placeholder="Username">
+		<input name="password" type="password" placeholder="Password"> <br><br>
+		<h3> Roles: </h3> <br>
 		 <input type='hidden' value='0' name='isparticipant'>
-		<input type="checkbox"  name="isparticipant" value="1">IsParticipant <br>
+		<input type="checkbox"  name="isparticipant" value="1">&nbsp; Is a Participant <br><br>
 		 <input type='hidden' value='0' name='isadmin'>
-		<input type="checkbox"  name="isadmin" value="1">IsAdmin <br>
+		<input type="checkbox"  name="isadmin" value="1">&nbsp; Is a Admin <br><br>
 		 <input type='hidden' value='0' name='isorganizer'>
-		<input type="checkbox"  name="isorganizer" value="1"> IsOrganizer <br>
+		<input type="checkbox"  name="isorganizer" value="1">&nbsp; Is a Organizer <br><br>
+		<p> *You can check multiple roles </p>
+		 <input id="submit" type="submit" value="ADD">
 		</div>
-		 <input id="submit" type="submit" value="SAVE">
 		</form>
 		</div>	
+		</div>
+
 
         <!-- Footer - change css when possible-->
         <footer class="page-footer font-small footer-main">

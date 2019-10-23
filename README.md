@@ -29,7 +29,7 @@ participant 	be able to see the expected outcome before I submit my results 	 I 
  admin	see all problems, outcomes and solutions 	 analyze how people use my system
 
 ## Login Page
-![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/Screenshots/login.png)
+![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/login.png)
 
 Once logged in the navbar loads up dynamically based on user roles i.e., Admin, Organizer and Participants. One user can have multiple roles
 
@@ -40,14 +40,14 @@ Once logged in the navbar loads up dynamically based on user roles i.e., Admin, 
 ## Organizer
 
 A organizer can add challenges and look at progress on particular challenges
-![Screenshot]((https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Organizer.png)
+![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Organizer.png)
 
 ## Admin
 
 A admin can add or remove users and assign roles to users
-![Screenshot]((https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Admin.png)
+![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Admin.png)
 
 ##Participant
 
 A Participant can solve challenges posted by organizers
-![Screenshot]((https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Participant.png)
+![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/Participant.png)

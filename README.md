@@ -18,15 +18,35 @@ User stories are included below.
 
 
 ## User Stories
-As a ...	I would like to...	So that...
-organizer	post a challenge with its solution	 participants can solve them
-organizer	see how many participants have attempted to solve my challenges 	 I can figure out how hard they are
-organizer 	remove challenges  	 nobody can submit solutions
-participant 	browse challenges before I attempt them 	 I determine which ones I want try
-participant	would like to submit my solution 	 I can see if my solution is correct
-participant 	be able to see the expected outcome before I submit my results 	 I can understand the problem better
- admin	add and remove new users 	 people can use my system
- admin	see all problems, outcomes and solutions 	 analyze how people use my system
+User Stories
+
+
+As a ...	    |   I would like to...	               								 | So that...
+
+
+organizer	 |  post a challenge with its solution	 							 | participants can solve them
+
+
+organizer	 |  see how many participants have attempted to solve my challenges  | I can figure out how hard they are
+
+
+organizer 	 |  remove challenges  												 | nobody can submit solutions
+
+
+participant  |  browse challenges before I attempt them 					     | I determine which ones I want try
+
+
+participant	 |  would like to submit my solution 	 							 | I can see if my solution is correct
+
+
+participant  |  be able to see the expected outcome before I submit my results 	 | I can understand the problem better 
+
+
+admin	     |  add and remove new users 										 | people can use my system
+
+
+admin	     |  see all problems, outcomes and solutions 						 | analyze how people use my system
+
 
 ## Login Page
 ![Screenshot](https://github.com/AKSHAT3272/Assignment-3-Collaborative-Software-Development/blob/master/Screenshots/login.png)
